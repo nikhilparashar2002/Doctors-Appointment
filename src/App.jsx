@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
@@ -9,6 +8,7 @@ import Doctor from './pages/Doctor'
 import Login from './pages/Login'
 import MyAppointment from './pages/MyAppointment'
 import MyProfile from './pages/MyProfile'
+import Navbar from './components/Navbar'
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <div className='mx-4 sm:mx-[10%]'>
-       
+       <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/About' element={<About/>}/>

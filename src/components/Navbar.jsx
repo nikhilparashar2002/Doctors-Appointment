@@ -65,7 +65,20 @@ function Navbar() {
               Create Account
             </button>
         }
-
+         <img onClick={()=>setShowMenu(true)} className='w-6 md:hidden' src={assets.menu_icon}/>
+         {/* Mobile menu */}
+         <div className={`${showMenu ? 'fixed w-full' : 'h-0 w-0'} md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}>
+          <div className='flex items-center justify-between px-5 py-6'>
+            <img className='w-36' src={assets.logo} alt=''/>
+            <img className='w-7' src={assets.cross_icon} onClick={()=>setShowMenu(false)}/>
+          </div>
+          <ul className='flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium'> 
+            <NavLink onClick={()=>setShowMenu(false)} to='/' className=''><p>Home</p></NavLink>
+            <NavLink onClick={()=>setShowMenu(false)} to='/Doctor' className=''><p>All DOCTORS</p></NavLink>
+            <NavLink onClick={()=>setShowMenu(false)} to='/About' className=''><p>All DOCTORS</p></NavLink>
+            <NavLink onClick={()=>setShowMenu(false)} to='/Contact' className=''><p>CONTACT</p></NavLink>
+          </ul>
+         </div>
       </div>
     </div>
   )
